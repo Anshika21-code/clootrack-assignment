@@ -40,7 +40,8 @@ def classify_description(description: str) -> dict:
     try:
         genai.configure(api_key=api_key)
 
-        model = genai.GenerativeModel("gemini-1.5-flash")
+        model = genai.GenerativeModel("models/gemini-flash-latest")
+
 
         response = model.generate_content(
             [
@@ -67,5 +68,6 @@ def classify_description(description: str) -> dict:
 
         return {"suggested_category": category, "suggested_priority": priority}
 
-    except Exception:
+    except Exception as e:
+        print("GEMINI ERROR:", str(e))
         return {"suggested_category": "general", "suggested_priority": "low"}
