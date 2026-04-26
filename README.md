@@ -1,7 +1,7 @@
 # Ticket Classification System
 
 ## Tech Stack
-- Flask
+- Django + DRF
 - React (Vite)
 - PostgreSQL
 - Docker & Docker Compose
